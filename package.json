@@ -5,7 +5,7 @@
 		"@slidev/theme-seriph": "latest",
 		"vue": "^3.5.26"
 	},
-	"name": "",
+	"name": "best-practices-for-team",
 	"private": true,
 	"scripts": {
 		"build": "slidev build",
