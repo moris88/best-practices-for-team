@@ -49,3 +49,4 @@ Per utilizzare questo repository, è necessario avere installato [Node.js](https
 È disponibile una versione PDF delle slide esportate in questo repository.
 
 - [Visualizza le slide (PDF)](./slides-export.pdf)
+- [Visualizza le slide (MD)](./CORSO.md)

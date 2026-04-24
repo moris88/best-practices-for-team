@@ -161,15 +161,17 @@ Il commit è un punto di ripristino narrativo, non un semplice salvataggio.
 *   **Frequenza:** Commit frequenti = storia chiara e debug facile.
 *   **Push Responsabile:** Chiediti: *"Questo codice è pronto per essere condiviso? È testato? È chiaro?"*
 
+> "So che usate l'IA per aiutarvi, ma ricordate: un commit è una dichiarazione di intenti al team, non solo un'istantanea del codice."
+
 ---
 
 # Manutenzione e Conflitti
 
 Evitare il "Merge Hell" facendo vivere il branch vicino al `main`.
 
-*   **Allineamento Regolare:** `git pull origin main` frequentemente.
+*   **Allineamento Regolare:** `git pull origin main` frequentemente (e/o `git fetch` + `git rebase main`).
 *   **Risoluzione Consapevole:** Capire la logica del codice, non solo "accettare tutto".
-*   **Pulizia:** Eliminare il branch (locale e remoto) dopo il merge.
+*   **Pulizia:** Eliminare il branch (locale e remoto) dopo il merge (`git branch -d <branch>` e `git push origin --delete <branch>`).
 
 <div class="mt-8 p-4 bg-blue-50 dark:bg-blue-900/20 border-l-4 border-blue-500 rounded-r">
   <h3 class="font-bold text-blue-700 dark:text-blue-300">GitHub Flow Recap:</h3>
@@ -194,16 +196,15 @@ Il Ciclo della Pull Request (PR) e Code Review
 
 Non è solo un merge, è il cancello della qualità.
 
-<v-clicks>
-
 *   **Anatomia di una PR Efficace:**
-    *   **Titolo Chiaro:** `feat: aggiunta funzionalità X`
-    *   **La regola del perché:** Il codice dice *cosa*, la descrizione dice *perché*.
-    *   **Context Checklist:** Screenshot, link al task, test eseguiti.
+    *   **Titolo Chiaro:** `feat: aggiunta funzionalità X` o `fix: risolto bug Y`.
+    *   **La regola del perché (descrizione):** Il codice dice *cosa*, la descrizione dice *perché*.
+    *   **Context Checklist:** Screenshot, link al task, test eseguiti (a discrezione, includere solo ciò che è rilevante).
 
-*   **La PR deve "vendere" la soluzione al team.**
-
-</v-clicks>
+*  **Taggare i Revisori:** Coinvolgi chi ha più contesto o esperienza pertinente.
+*  **Non forzare l'approvazione:** Se non sei sicuro, chiedi un secondo parere o lascia commenti invece di approvare.
+*  **PR piccole = revisione più veloce e meno errori.** Se la PR è troppo grande, chiediti: *"Posso scomporla in pezzi più piccoli?"*
+*  **Non è un giudizio personale:** La PR è sul codice, non sulla persona. Separare il lavoro dalla persona è fondamentale per una cultura di feedback sana.
 
 ---
 
@@ -300,17 +301,18 @@ Scrivere codice che il team può gestire.
 </div>
 
 <div class="mt-8 text-sm italic border-t pt-4">
-"Revisione di Copilot: Non accettare passivamente l'AI, valuta se è sicuro e allineato."
+"Copilot Review: Non ignorare ma nemmeno accettare passivamente l'AI, valuta se è utile, sicuro e allineato."
 </div>
 
 ---
 
 # Comunicazione e Allineamento
 
-*   **Daily Standups:** Non sono interrogazioni.
+*   **Daily Standups:** Non sono interrogazioni, ma momenti di allineamento. Condividi progressi, blocchi e prossimi passi.
     *   *"Sono bloccato qui, chi mi aiuta?"*
     *   *"Ho completato questo, cosa faccio dopo?"*
-*   **Chiedere aiuto precocemente:** Non passare più di un'ora bloccato senza consultare il team.
+*   **Chiedere aiuto precocemente:** Non passare più di un'ora bloccato senza consultare il team. Il tempo sprecato è un costo per tutti.
+*   **Allineamento sui Processi:** Se qualcosa non funziona (es. PR troppo grandi, mancanza di test), portalo alla discussione del team. La cultura si costruisce insieme.
 
 <div class="mt-20 text-center text-2xl font-serif italic text-primary">
 "Il codice è di proprietà del team, non del singolo."
